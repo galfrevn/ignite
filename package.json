@@ -1,4 +1,6 @@
 {
+  "name": "ignite",
+  "description": "An Object-Relational Mapping (ORM) library for Amazon DynamoDB, simplifying data interactions and enhancing scalability.",
   "private": true,
   "scripts": {
     "build": "turbo build",
@@ -13,7 +15,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.22.0",
     "eslint": "^7.32.0",
-    "eslint-config-acme": "workspace:*",
+    "eslint-config-ignite": "workspace:*",
     "prettier": "^2.5.1",
     "turbo": "latest"
   },

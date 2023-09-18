@@ -14,9 +14,9 @@ importers:
       eslint:
         specifier: ^7.32.0
         version: 7.32.0
-      eslint-config-acme:
+      eslint-config-ignite:
         specifier: workspace:*
-        version: link:packages/eslint-config-acme
+        version: link:packages/eslint-config-ignite
       prettier:
         specifier: ^2.5.1
         version: 2.8.0
@@ -26,12 +26,6 @@ importers:
 
   apps/docs:
     dependencies:
-      '@acme/core':
-        specifier: workspace:*
-        version: link:../../packages/acme-core
-      '@acme/utils':
-        specifier: workspace:*
-        version: link:../../packages/acme-utils
       next:
         specifier: ^13.4.1
         version: 13.4.1(react-dom@18.2.0)(react@18.2.0)
@@ -42,9 +36,9 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
-      '@acme/tsconfig':
+      '@ignite/tsconfig':
         specifier: workspace:*
-        version: link:../../packages/acme-tsconfig
+        version: link:../../packages/ignite-tsconfig
       '@types/node':
         specifier: ^17.0.12
         version: 17.0.45
@@ -54,70 +48,14 @@ importers:
       '@types/react-dom':
         specifier: ^18.0.7
         version: 18.0.9
-      eslint-config-acme:
+      eslint-config-ignite:
         specifier: workspace:*
-        version: link:../../packages/eslint-config-acme
+        version: link:../../packages/eslint-config-ignite
       typescript:
         specifier: ^4.5.4
         version: 4.9.3
 
-  packages/acme-core:
-    devDependencies:
-      '@acme/tsconfig':
-        specifier: workspace:*
-        version: link:../acme-tsconfig
-      '@types/react':
-        specifier: ^18.2.0
-        version: 18.2.5
-      '@types/react-dom':
-        specifier: ^18.2.0
-        version: 18.2.4
-      eslint:
-        specifier: ^7.32.0
-        version: 7.32.0
-      eslint-config-acme:
-        specifier: workspace:*
-        version: link:../eslint-config-acme
-      react:
-        specifier: ^17.0.2
-        version: 17.0.2
-      tsup:
-        specifier: ^5.10.1
-        version: 5.12.9(typescript@4.9.3)
-      typescript:
-        specifier: ^4.5.3
-        version: 4.9.3
-
-  packages/acme-tsconfig: {}
-
-  packages/acme-utils:
-    devDependencies:
-      '@acme/tsconfig':
-        specifier: workspace:*
-        version: link:../acme-tsconfig
-      '@types/react':
-        specifier: ^18.2.0
-        version: 18.2.5
-      '@types/react-dom':
-        specifier: ^18.2.0
-        version: 18.2.4
-      eslint:
-        specifier: ^7.32.0
-        version: 7.32.0
-      eslint-config-acme:
-        specifier: workspace:*
-        version: link:../eslint-config-acme
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      tsup:
-        specifier: ^5.10.1
-        version: 5.12.9(typescript@4.9.3)
-      typescript:
-        specifier: ^4.5.3
-        version: 4.9.3
-
-  packages/eslint-config-acme:
+  packages/eslint-config-ignite:
     dependencies:
       eslint-config-next:
         specifier: ^13.4.1
@@ -131,6 +69,62 @@ importers:
       eslint-plugin-react:
         specifier: 7.28.0
         version: 7.28.0(eslint@7.32.0)
+
+  packages/ignite-core:
+    devDependencies:
+      '@ignite/tsconfig':
+        specifier: workspace:*
+        version: link:../ignite-tsconfig
+      '@types/react':
+        specifier: ^18.2.0
+        version: 18.2.5
+      '@types/react-dom':
+        specifier: ^18.2.0
+        version: 18.2.4
+      eslint:
+        specifier: ^7.32.0
+        version: 7.32.0
+      eslint-config-ignite:
+        specifier: workspace:*
+        version: link:../eslint-config-ignite
+      react:
+        specifier: ^17.0.2
+        version: 17.0.2
+      tsup:
+        specifier: ^5.10.1
+        version: 5.12.9(typescript@4.9.3)
+      typescript:
+        specifier: ^4.5.3
+        version: 4.9.3
+
+  packages/ignite-tsconfig: {}
+
+  packages/ignite-utils:
+    devDependencies:
+      '@ignite/tsconfig':
+        specifier: workspace:*
+        version: link:../ignite-tsconfig
+      '@types/react':
+        specifier: ^18.2.0
+        version: 18.2.5
+      '@types/react-dom':
+        specifier: ^18.2.0
+        version: 18.2.4
+      eslint:
+        specifier: ^7.32.0
+        version: 7.32.0
+      eslint-config-ignite:
+        specifier: workspace:*
+        version: link:../eslint-config-ignite
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      tsup:
+        specifier: ^5.10.1
+        version: 5.12.9(typescript@4.9.3)
+      typescript:
+        specifier: ^4.5.3
+        version: 4.9.3
 
 packages:
 
@@ -1376,6 +1370,7 @@ packages:
   /esbuild@0.14.54:
     resolution: {integrity: sha512-Cy9llcy8DvET5uznocPyqL3BFRrFXSVqbgpMJ9Wz8oVjZlh/zUSNbPRbov0VX7VxN2JH1Oa0uNxZ7eLRb62pJA==}
     engines: {node: '>=12'}
+    hasBin: true
     requiresBuild: true
     optionalDependencies:
       '@esbuild/linux-loong64': 0.14.54
@@ -1441,6 +1436,7 @@ packages:
 
   /eslint-config-prettier@8.5.0(eslint@7.32.0):
     resolution: {integrity: sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==}
+    hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
@@ -2139,6 +2135,7 @@ packages:
   /is-docker@2.2.1:
     resolution: {integrity: sha512-F+i2BKsFrH66iaUFc0woD8sLy8getkwTwtOBjvs56Cx4CgJDeKQeqfz8wAYiSb8JOprWhHH5p77PbmYCvvUuXQ==}
     engines: {node: '>=8'}
+    hasBin: true
     dev: false
 
   /is-extglob@2.1.1:
@@ -2259,6 +2256,7 @@ packages:
 
   /json5@1.0.1:
     resolution: {integrity: sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==}
+    hasBin: true
     dependencies:
       minimist: 1.2.7
     dev: false
@@ -2479,6 +2477,7 @@ packages:
   /next@13.4.1(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-JBw2kAIyhKDpjhEWvNVoFeIzNp9xNxg8wrthDOtMctfn3EpqGCmW0FSviNyGgOSOSn6zDaX48pmvbdf6X2W9xA==}
     engines: {node: '>=16.8.0'}
+    hasBin: true
     peerDependencies:
       '@opentelemetry/api': ^1.1.0
       fibers: '>= 3.1.0'
@@ -2932,6 +2931,7 @@ packages:
 
   /resolve@2.0.0-next.4:
     resolution: {integrity: sha512-iMDbmAWtfU+MHpxt/I5iWI7cY6YVEZUQ3MBgPQ++XD1PELuJHIl82xBmObyP2KyQmkNB2dsqF7seoQQiAn5yDQ==}
+    hasBin: true
     dependencies:
       is-core-module: 2.11.0
       path-parse: 1.0.7
@@ -2950,6 +2950,7 @@ packages:
   /rollup@2.79.1:
     resolution: {integrity: sha512-uKxbd0IhMZOhjAiD5oAFp7BqvkA4Dv47qpOCtaNvng4HBwdbWtdOh8f5nZNuk2rp51PMGk3bzfWu5oayNEuYnw==}
     engines: {node: '>=10.0.0'}
+    hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
@@ -2982,6 +2983,7 @@ packages:
 
   /semver@6.3.0:
     resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==}
+    hasBin: true
     dev: false
 
   /semver@7.3.8:
@@ -3192,6 +3194,7 @@ packages:
   /sucrase@3.29.0:
     resolution: {integrity: sha512-bZPAuGA5SdFHuzqIhTAqt9fvNEo9rESqXIG3oiKdF8K4UmkQxC4KlNL3lVyAErXp+mPvUqZ5l13qx6TrDIGf3A==}
     engines: {node: '>=8'}
+    hasBin: true
     dependencies:
       commander: 4.1.1
       glob: 7.1.6
@@ -3289,6 +3292,7 @@ packages:
 
   /tree-kill@1.2.2:
     resolution: {integrity: sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==}
+    hasBin: true
     dev: true
 
   /trim-newlines@3.0.1:
@@ -3319,6 +3323,7 @@ packages:
 
   /tsup@5.12.9(typescript@4.9.3):
     resolution: {integrity: sha512-dUpuouWZYe40lLufo64qEhDpIDsWhRbr2expv5dHEMjwqeKJS2aXA/FPqs1dxO4T6mBojo7rvo3jP9NNzaKyDg==}
+    hasBin: true
     peerDependencies:
       '@swc/core': ^1
       postcss: ^8.4.12
